@@ -26,7 +26,7 @@ const fetchJson = (url, options = {}) => {
 
 
 const App = () => (
-    <Admin layout={Layout} dashboard={Dashboard} authProvider={authProviderDjango} dataProvider={drfProvider('http://localhost:8000/api', fetchJson)}>
+    <Admin layout={Layout} dashboard={Dashboard} authProvider={authProviderDjango} dataProvider={drfProvider('https://osat-server-lighthouse.apps.okd4.filice.eu/api', fetchJson)}>
         <Resource name="website_user" options={{ label: 'Websites' }}  list={WebsiteList}/>
         <Resource name="extractor" list={ExtractorList} edit={ExtractorEdit} create={ExtractorCreate} show={ExtractorShow}/>
         <Resource name="lighthouse" title="Lighthouse" options={{ title: 'lighthouse', label: 'Lighthouse' }} list={LighthouseList} show={LighthouseShow}  edit={LighthouseEdit} create={LighthouseCreate}/>
